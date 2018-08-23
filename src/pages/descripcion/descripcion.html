@@ -1,0 +1,31 @@
+<!--
+  Generated template for the DescripcionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+
+        <ion-title>descripcion</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item *ngFor="let item of datos.productos">
+            codigo:
+            <h3>{{item.codigo}}</h3>
+            <br> Producto:
+            <h3>{{item.descripcion}}</h3>
+            <br> precio:
+            <h3 *ngIf="item.precio">${{item.precio}}</h3>
+
+        </ion-item>
+    </ion-list>
+
+</ion-content>

@@ -7,6 +7,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+//scanner
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+//Diagnostic
+import { Diagnostic } from '@ionic-native/diagnostic';
+
+import { HttpClientModule} from "@angular/common/http";
+
+import { ConsultaProvider } from '../providers/consulta/consulta';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -14,7 +23,8 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -24,7 +34,10 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Diagnostic,
+    BarcodeScanner,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConsultaProvider
   ]
 })
 export class AppModule {}

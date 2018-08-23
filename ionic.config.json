@@ -1,0 +1,7 @@
+{
+  "name": "consultaProducto",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
